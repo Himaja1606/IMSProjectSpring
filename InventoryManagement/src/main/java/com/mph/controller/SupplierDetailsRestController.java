@@ -27,7 +27,7 @@ import com.mph.service.SupplierDetailsService;
  */
 @RestController
 
-@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "false", methods = { RequestMethod.GET,
+@CrossOrigin(origins = "*", allowCredentials = "false", methods = { RequestMethod.GET,
 		RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE }, allowedHeaders = "*")
 public class SupplierDetailsRestController {
 

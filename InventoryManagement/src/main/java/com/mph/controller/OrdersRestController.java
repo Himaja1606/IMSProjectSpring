@@ -2,6 +2,8 @@ package com.mph.controller;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +16,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 
 import com.mph.entity.Customer;
 import com.mph.entity.Orders;
@@ -34,14 +34,14 @@ import com.mph.service.OrdersService;
 		RequestMethod.PUT, RequestMethod.DELETE }, allowedHeaders = "*")
 public class OrdersRestController {
 
-	Orders ord;
 	/**
-	 * the Orders service
+	 * Orders service
 	 */
 	@Autowired
 	OrdersService ordersService;
+	Orders ord;
 	/**
-	 * the Customer service
+	 * Customer service
 	 */
 	@Autowired
 	CustomerService customerService;
@@ -109,7 +109,7 @@ public class OrdersRestController {
 	 * 
 	 * @return orders list
 	 */
-	@DeleteMapping("/delete/{orderId}")
+	@DeleteMapping("/deleteord/{orderId}")
 	public ResponseEntity<List<Orders>> deleteOrders(@PathVariable("id") int orderId) {
 
 		List<Orders> orderslist = ordersService.deleteOrders(orderId);

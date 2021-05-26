@@ -33,19 +33,18 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Orders {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "order_Id")
-	@NotEmpty(message = "order id cannot be empty")
+	@Column(name = "orderId")
+//	@NotEmpty(message = "order id cannot be empty")
 	private int orderId;
 	@Column
 	private String orderDate;
 	@Column
-	@NotEmpty(message = "order quantity cannot be empty")
+//	@NotEmpty(message = "order quantity cannot be empty")
 	private int orderQuantity;
 	@Column
-	@NotEmpty(message = "order price cannot be empty")
+//	@NotEmpty(message = "order price cannot be empty")
 	private double orderPrice;
 	@ManyToOne
-	@JsonIgnore
 	@JoinColumn(name = "customerId")
 	private Customer customer;
 	

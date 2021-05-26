@@ -55,7 +55,7 @@ public class CustomerRestController {
 		 List<Customer> customerlist = customerService.getCustomerList();
 		PropertyConfigurator.configure(CustomerRestController.class.getClassLoader().getResource("log4j.properties"));
 
-		 System.out.println("Customercustomerlist : " + customerlist);
+		 System.out.println("Customer : " + customerlist);
 		 logger.info("Getting All Customers");
 
 		 if(customerlist.isEmpty())

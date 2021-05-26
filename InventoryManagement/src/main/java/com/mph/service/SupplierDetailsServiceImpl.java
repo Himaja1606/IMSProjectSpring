@@ -16,8 +16,8 @@ public class SupplierDetailsServiceImpl implements SupplierDetailsService {
 	SupplierDetailsDao supplierdetailsDao;
 
 	@Override
-	public void createSupplierDetails(SupplierDetails suptomer) {
-		supplierdetailsDao.createSupplierDetails(suptomer);
+	public void createSupplierDetails(SupplierDetails supplierDetails) {
+		supplierdetailsDao.createSupplierDetails(supplierDetails);
 
 	}
 
@@ -28,9 +28,9 @@ public class SupplierDetailsServiceImpl implements SupplierDetailsService {
 	}
 
 	@Override
-	public SupplierDetails getSupplierDetails(SupplierDetails suptomer) {
+	public SupplierDetails getSupplierDetails(SupplierDetails supplierDetails) {
 
-		return supplierdetailsDao.getSupplierDetails(suptomer);
+		return supplierdetailsDao.getSupplierDetails(supplierDetails);
 	}
 
 	@Override

@@ -27,12 +27,12 @@ public class SupplierDetails {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "supplier_Id")
-	@NotEmpty(message = "supplier id cannot be empty")
+	@Column(name = "supplierId")
+//	@NotEmpty(message = "supplier id cannot be empty")
 	private int supplierId;
-	@NotEmpty(message = "supplier name cannot be empty")
+	//@NotEmpty(message = "supplier name cannot be empty")
 	@Column
-	@Size(min = 5, max = 10, message = "supplier name has to be 5-15 characters long")
+	//@Size(min = 5, max = 10, message = "supplier name has to be 5-15 characters long")
 	private String supplierName;
 	@Column
 	private int suppliedQuantity;

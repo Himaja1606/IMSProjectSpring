@@ -30,18 +30,20 @@ import javax.validation.constraints.NotEmpty;
 public class WareHouse {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "inventory_Id")
-	@NotEmpty(message = "inventory id cannot be empty")
+	@Column(name = "inventoryId")
+	//@NotEmpty(message = "inventory id cannot be empty")
 	private int inventoryId;
 	@Column
-	@NotEmpty(message = "inventory received cannot be empty")
+	//@NotEmpty(message = "inventory received cannot be empty")
 	private int inventoryReceived;
 	@Column
-	@NotEmpty(message = "inventory shipped cannot be empty")
+	//@NotEmpty(message = "inventory shipped cannot be empty")
 	private int inventoryShipped;
 	@Column
-	@NotEmpty(message = "inventory onhand cannot be empty")
+//	@NotEmpty(message = "inventory onhand cannot be empty")
 	private int inventoryOnhand;
+	@Column
+	private String dateOfrecord;
 	public WareHouse() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -55,12 +57,13 @@ public class WareHouse {
 	 * @param inventoryShipped new inventoryShipped
 	 * @param inventoryOnhand new inventoryOnhand
 	 */
-	public WareHouse(int inventoryId, int inventoryReceived, int inventoryShipped, int inventoryOnhand) {
+	public WareHouse(int inventoryId, int inventoryReceived, int inventoryShipped, int inventoryOnhand, String dateOfrecord) {
 		super();
 		this.inventoryId = inventoryId;
 		this.inventoryReceived = inventoryReceived;
 		this.inventoryShipped = inventoryShipped;
 		this.inventoryOnhand = inventoryOnhand;
+		this.dateOfrecord = dateOfrecord;
 	}
 	
 	
@@ -133,10 +136,30 @@ public class WareHouse {
 	public void setInventoryOnhand(int inventoryOnhand) {
 		this.inventoryOnhand = inventoryOnhand;
 	}
+	/**
+	 * Gets the dateOfrecord
+	 * @return the dateOfrecord
+	 */
+	public String getdateOfrecord() {
+		return dateOfrecord;
+	}
+	
+	
+	/**
+	 * Sets the dateOfrecord
+	 * @param dateOfrecord new dateOfrecord
+	 */
+	public void setgetdateOfrecord(String getdateOfrecord) {
+		this.dateOfrecord = dateOfrecord;
+	}
+
+
 	@Override
 	public String toString() {
 		return "WareHouse [inventoryId=" + inventoryId + ", inventoryReceived=" + inventoryReceived
-				+ ", inventoryShipped=" + inventoryShipped + ", inventoryOnhand=" + inventoryOnhand + "]";
+				+ ", inventoryShipped=" + inventoryShipped + ", inventoryOnhand=" + inventoryOnhand + ", dateOfrecord="
+				+ dateOfrecord + "]";
 	}
+	
 	
 }

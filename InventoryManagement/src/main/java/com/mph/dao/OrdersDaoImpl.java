@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.mph.entity.Customer;
 import com.mph.entity.Orders;
+import com.mph.entity.WareHouse;
 
 /**
  * 
@@ -37,7 +38,8 @@ public class OrdersDaoImpl implements OrdersDao {
 	@Override
 	public void createOrders(Orders orders, int customerId) {
 		System.out.println(orders);
-		getSession().saveOrUpdate(orders);
+		//getSession().saveOrUpdate(orders);
+		getSession().save(orders);
 		System.out.println("Orders Stored in DB Successfully !!!");
 
 	}
@@ -113,5 +115,18 @@ public class OrdersDaoImpl implements OrdersDao {
 		Orders orders = (Orders) criteria.uniqueResult();
 		return orders;
 	}
-
+	/*public void Operation(int orderId)
+	{
+		Criteria criteria=getSession().createCriteria(Orders.class);
+		criteria.add(Restrictions.eq("orderId", orderId));
+		Orders order=(com.mph.entity.Orders) criteria.uniqueResult();
+		int quantity=order.getOrderQuantity();
+		Criteria criteria1=getSession().createCriteria(WareHouse.class);
+		criteria1.add(Restrictions.eq("inventoryId", 1));
+		WareHouse warehouse=(WareHouse) criteria1.uniqueResult();
+		int q=warehouse.getInventoryOnhand();
+		warehouse.setInventoryOnhand(q-quantity);
+		getSession().update(warehouse);
+		
+	} */
 }
