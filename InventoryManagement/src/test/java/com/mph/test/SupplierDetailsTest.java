@@ -31,7 +31,7 @@ public class SupplierDetailsTest {
 	@Test
 	public void createSupplierDetails()
 	{
-		supplierdetailsDao.createSupplierDetails(new SupplierDetails(1,"keerthyyy", 9));
+		supplierdetailsDao.createSupplierDetails(new SupplierDetails(1,"ram", 9));
 		assertEquals(supplierdetailsDao.getSupplierDetailsById(1).getSupplierName(),"keerthyyy");
 	}
 	@Test

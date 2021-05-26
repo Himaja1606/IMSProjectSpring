@@ -23,6 +23,8 @@ import org.apache.log4j.PropertyConfigurator;
 import com.mph.entity.Customer;
 import com.mph.service.CustomerService;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 /**
  * 
  * @author HIMAJA
@@ -30,8 +32,10 @@ import com.mph.service.CustomerService;
  *
  */
 @RestController
-@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "false", methods = { RequestMethod.GET,
+@CrossOrigin(origins = "*", allowCredentials = "false", methods = { RequestMethod.GET,
 		RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE }, allowedHeaders = "*")
+@RequestMapping("/api")
+@EnableSwagger2
 public class CustomerRestController {
 	
 
